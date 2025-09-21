@@ -1,0 +1,10 @@
+# Problem: Check If It Is a Good Array - https://leetcode.com/problems/check-if-it-is-a-good-array/description/?envType=problem-list-v2&envId=number-theory
+
+class Solution:
+    def isGoodArray(self, nums: List[int]) -> bool:
+        g = nums[0]
+        for num in nums[1:]:
+            g = math.gcd(g, num)
+            if g == 1:
+                return True
+        return g == 1
